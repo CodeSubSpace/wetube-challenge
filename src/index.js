@@ -1,21 +1,19 @@
 import express from "express";
-import { securityLogger, timeLogger, urlLogger } from "./middelwares";
-import { protectRouter } from "./routers/protectRouter";
-import { globalRouter } from "./routers/globalRouter";
+import globalRouter from "./routers/globalRouter";
+import storyRouter from "./routers/storyRouter";
+import usersRouter from "./routers/usersRouter";
 
-const PORT = 4000;
 const app = express();
+const PORT = 4000;
 
-// app.use("/", globalRouter);
-app.use(
-    urlLogger,
-    timeLogger,
-    securityLogger,
-)
+//Write middlewares (coming soon...)
 
-app.use("/protected", protectRouter);
+//routers
+app.use("/", globalRouter);
+app.use("/story", storyRouter);
+app.use("/users", usersRouter);
 
-const handleListening = () => {
-    console.log(`✅ Server listenting on http://localhost:${PORT} 🚀`);
+const listenHandler = (req, res) => {
+    console.log(`Server listening on http://localhost:${PORT}`)
 }
-app.listen(PORT, handleListening);
+app.listen(PORT, listenHandler)
