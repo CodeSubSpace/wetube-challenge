@@ -6,7 +6,10 @@ import usersRouter from "./routers/usersRouter";
 const app = express();
 const PORT = 4000;
 
-//Write middlewares (coming soon...)
+app.set("view engine", "pug");
+app.set("views", process.cwd() + "/src/views");
+
+
 
 //routers
 app.use("/", globalRouter);

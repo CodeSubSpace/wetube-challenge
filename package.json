@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/CodeSubSpace/wetube-challenge#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",

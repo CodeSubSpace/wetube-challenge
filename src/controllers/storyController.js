@@ -1,13 +1,13 @@
 export const story = (req, res) => {
-    res.send("Hello! This is story page!!!");
+    res.render(`story`, { pageTitle : "story"});
 }
 
 export const storyEdit = (req, res) => {
     const { id } = req.params;
-    res.send(`Hello! This is story ${id} edit page`);
+    res.render(`storyEdit`, { pageTitle : "story Edit"});
 }
 
 export const storyDelete = (req, res) => {
     const { id } = req.params;
-    res.send(`Hello! This is story ${id} delete page`);
+    res.render(`storyDelete`, { pageTitle : "story Delete"});
 }

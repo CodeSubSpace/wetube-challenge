@@ -1,19 +1,19 @@
 export const home = (req, res) => {
-    res.send("Hello! This is Wetube Challege Webpage by CodeSubSpace")
+    res.render("home", { pageTitle: "home"})
 }
 
 export const trending = (req, res) => {
-    res.send("Hello! This is Trending Page!!!");
+    res.render("trending", { pageTitle: "trending"});
 }
 
 export const new_ = (req, res) => {
-    res.send("Hello! This is new Page!!!");
+    res.render("new", { pageTitle : "new"});
 }
 
 export const join = (req, res) => {
-    res.send("Hello! This is join Page!!!");
+    res.render("join", { pageTitle : "join"});
 }
 
 export const login = (req, res) => {
-    res.send("Hello! This is login Page!!!");
+    res.render("login", { pageTitle : "login"});
 }

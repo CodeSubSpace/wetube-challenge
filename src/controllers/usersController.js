@@ -1,12 +1,12 @@
 export const users = (req, res) => {
-    res.send("Hello! This is users Page!!!")
+    res.render("users", { pageTitle: "users"})
 }
 
 export const userId = (req, res) => {
     const { id } = req.params
-    res.send(`Hello! This is user ${id} Page!!!`)
+    res.render("userId", { pageTitle: "userID"})
 }
 
 export const userEdit = (req, res) => {
-    res.send("Hello! This is user edit Page!!!")
+    res.render("userEdit", { pageTitle: "userEdit"})
 }
