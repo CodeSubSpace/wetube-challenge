@@ -2,8 +2,9 @@ import {
     getMovieById,
     getMovies,
     getMovieByMinimumRating,
-    getMovieByMinimumYear
-  } from "./db";
+    getMovieByMinimumYear,
+    addMovie
+  } from "../db";
   
 function intersection(arr1, arr2) {
     const set2 = new Set(arr2);
@@ -47,3 +48,16 @@ function intersection(arr1, arr2) {
         movies
     })
   };
+
+export const getAdd = (req, res) => {
+
+  res.render("add",
+    { pageTitle: "Add"}
+  )
+}
+
+export const postAdd = (req, res) => {
+  const { title, synopsis, genres } = req.body
+  addMovie({title, synopsis, genres})
+  res.redirect("/")
+}

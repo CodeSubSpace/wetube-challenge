@@ -6,4 +6,5 @@ block content
 
     ul
         each genre in movie.genres
-            li=genre 
+            if genre !== ","
+                li=genre    
