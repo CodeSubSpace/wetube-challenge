@@ -1,0 +1,11 @@
+extends base.pug
+
+block content
+    form(method="POST")
+        h3 Edit Video!
+        input(placeholder=movie.title, value=movie.title, name="title")
+        input(placeholder=movie.summary, value=movie.summary, name="summary")
+        input(placeholder=movie.year, value=movie.year, name="year")
+        input(placeholder=movie.rating, value=movie.rating, name="rating")
+        input(placeholder=movie.genres, value=movie.genres, name="genres")
+        input(type='Submit')

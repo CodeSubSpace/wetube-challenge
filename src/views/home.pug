@@ -1,0 +1,12 @@
+extends base.pug
+include mixins/movie
+
+block content
+    a(href="/upload") Upload Video
+    <br />
+    h1 Movie Titles
+    div.movie_column
+        each movie in movies
+            +movie(movie)
+        else
+            span No videos found
