@@ -6,4 +6,9 @@ You can do Movie.find() or whatever you need like normal!
 */
 import Movie from "./models/Movie";
 
+export const movieHome = async (req, res) => {
+    const movies = await Movie.find({})
+    console.log(movies)
+}
+
 // Add your magic here!
