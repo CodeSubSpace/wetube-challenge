@@ -18,7 +18,9 @@
   "homepage": "https://github.com/CodeSubSpace/wetube-challenge#readme",
   "dependencies": {
     "axios": "^1.6.8",
+    "bcrypt": "5.0.1",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
     "mongoos": "^0.0.1-security",
     "mongoose": "^8.4.0",
     "pug": "^3.0.2"

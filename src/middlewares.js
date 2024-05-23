@@ -1,5 +1,6 @@
 export const localsMiddleware = (req, res, next) => {
-    res.locals.siteTitle = "Nomad Movies";
-    next();
-  };
+  res.locals.siteTitle = "Nomad Users";
+  next();
+};
+
   
