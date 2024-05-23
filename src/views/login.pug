@@ -1,0 +1,11 @@
+extends base.pug
+
+block content
+    form(method="POST")
+        if errorMessage
+            h3=errorMessage
+        else
+            h3 Login!
+        input(placeholder="username", name="username", type="text", required)
+        input(placeholder="password", name="password", type="password", required)
+        input(type="submit", value="login")

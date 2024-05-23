@@ -1,0 +1,9 @@
+extends base.pug
+
+block content
+    if !loggedIn
+        a(href="/login") login
+        a(href="/join") Join
+    else
+        //- a(href="/logout") Logout
+        h1 #{user.username}의 프로필

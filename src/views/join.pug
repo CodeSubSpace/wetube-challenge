@@ -1,0 +1,9 @@
+extends base.pug
+
+block content
+    form(method="POST")
+        h3 #{joinMessage}
+        input(name="username", required, placeholder="Write your username")
+        input(name="password", required, placeholder="Write your password")
+        input(name="crossPassword", required, placeholder="Check your password")
+        input(type="submit")

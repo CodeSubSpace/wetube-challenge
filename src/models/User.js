@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 /*
 PLEASE ADD YOUR USERNAME IN THIS LINE.
@@ -10,7 +11,10 @@ WE NEED TO SHARE THE SAME DB SO NICO CAN CHECK OUT EVERYBODYS PROJECT.
 */
 const YOUR_USERNAME = "codeSubSpace";
 
-const UserSchema = mongoose.Schema({});
+const UserSchema = mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  password: { type: String },
+});
 
 if (YOUR_USERNAME === null || typeof YOUR_USERNAME !== "string") {
   /*
@@ -26,6 +30,12 @@ if (YOUR_USERNAME === null || typeof YOUR_USERNAME !== "string") {
 if (YOUR_USERNAME.includes("@")) {
   throw Error("❌  Please remove the @ from your username  ❌");
 }
+
+UserSchema.pre("save", async function () {
+  if (this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 5);
+  }
+});
 
 const model = mongoose.model(`User_${YOUR_USERNAME}`, UserSchema);
 
