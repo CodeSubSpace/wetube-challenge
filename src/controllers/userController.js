@@ -1,4 +1,4 @@
-import User from "./models/User";
+import User from "../models/User";
 import bcrypt from "bcrypt";
 
 export const home = (req, res) => {
@@ -71,4 +71,11 @@ export const postLogin = async (req, res) => {
     req.session.loggedIn = true;
     req.session.user = user;
     return res.redirect("/")
+}
+
+export const getLogout = async (req, res) => {
+    req.session.loggedIn = false;
+    req.session.user = null;
+
+    return res.redirect("/");
 }
