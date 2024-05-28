@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(localsMiddleware);
 
 app.use("/", userRouter);
-app.use("/video", videoRouter);
+// app.use("/video", videoRouter);
 
 const listenHandler = (req, res) => {
     console.log(`✅ Server listening on http://localhost:${PORT} 🚀`)

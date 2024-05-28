@@ -1,5 +1,4 @@
 import multer from "multer";
-import multerS3 from "multer-s3";
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteTitle = "Nomad Users";
@@ -8,7 +7,6 @@ export const localsMiddleware = (req, res, next) => {
   next();
 };
 
-export const videoUpload = multer({
-  dest: "uploads",
-  preservePath: true,
+export const txtUpload = multer({
+  dest: "uploads/txt",
 })

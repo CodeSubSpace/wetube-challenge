@@ -1,5 +1,6 @@
 import User from "../models/User";
 import bcrypt from "bcrypt";
+import fs from 'node:fs';
 
 export const home = (req, res) => {
     res.render("home", { pageTitle: "Home" });
@@ -79,3 +80,18 @@ export const getLogout = async (req, res) => {
 
     return res.redirect("/");
 }
+
+export const postUpload = async (req, res) => {
+    const fileDir = req.file.path;
+    const path = require('path');
+    const fullPath = path.join(__dirname, '..', '..', 'uploads', 'txt', path.basename(fileDir));
+
+
+    fs.readFile(fullPath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            return res.status(500).send('Error reading file');
+        }
+        return res.send(data);
+    });
+    }
